@@ -11,11 +11,11 @@ class AdditionalNrSaLocking: NvItemTweak(), Parcelable {
   override val name = "Enable additional NR SA locking"
   @IgnoredOnParcel
   override val description =
-      "Adds n1/2/3/5/7/8/12/20/25/26/28/29/30/38/40/41/48/66/70/71/75/77/78 to supported NR SA bands"
+      "Adds n1/2/3/5/7/8/12/20/25/26/28/29/30/38/40/41/48/66/70/71/75/77/78/79/257 to supported NR SA bands"
 
   private val bands
     get()=
-      listOf(1, 2, 3, 5, 7, 8, 12, 20, 25, 26, 28, 29, 30, 38, 40, 41, 48, 66, 70, 71, 75, 77, 78)
+      listOf(1, 2, 3, 5, 7, 8, 12, 20, 25, 26, 28, 29, 30, 38, 40, 41, 48, 66, 70, 71, 75, 77, 78, 79, 257)
 
   override val nvItems: List<NvItem>
     get() =
