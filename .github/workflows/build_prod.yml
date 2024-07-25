@@ -49,8 +49,8 @@ jobs:
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
 
-      - name: Build AAB and APK with Gradle
-        run: ./gradlew --refresh-dependencies assembleRelease
+      - name: Build AAB and APK with Gradle(assembleDebug)
+        run: ./gradlew assembleDebug
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
 
