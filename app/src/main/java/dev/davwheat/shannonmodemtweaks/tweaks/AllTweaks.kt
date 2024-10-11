@@ -17,6 +17,8 @@ import dev.davwheat.shannonmodemtweaks.tweaks.nvitems.uecapa.PhyUeTxAntennaSelec
 import dev.davwheat.shannonmodemtweaks.tweaks.nvitems.uecapa.Qam256UploadSupport
 import dev.davwheat.shannonmodemtweaks.tweaks.nvitems.uecapa.SetLteFgis
 import dev.davwheat.shannonmodemtweaks.tweaks.nvitems.uecapa.rel14.Tbs33bSupport
+import dev.davwheat.shannonmodemtweaks.tweaks.nvitems.AdditionalNrSaLockingJP
+
 
 val AllTweaks: Map<String, List<Tweak>> =
   mapOf(
@@ -27,6 +29,7 @@ val AllTweaks: Map<String, List<Tweak>> =
         LteRrcLoggedMeas(),
         NrConfigMode(),
         PhyUeSpecificRefSigSupport(),
+        AdditionalNrSaLockingJP(),
         AdditionalNrSaLocking(),
         SrsTxSwitch(),
         NrCommHpUePc1Dot5SupportedBands(),
