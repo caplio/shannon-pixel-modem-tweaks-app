@@ -8,19 +8,17 @@ import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-class Segmentation : NvItemTweak(), Parcelable {
+class Rrcinactive : NvItemTweak(), Parcelable {
   @IgnoredOnParcel
-  override val name = "Enable RRC UL Segmentation"
+  override val name = "Enable RRC Inactive state support"
   @IgnoredOnParcel
   override val description = "Applies to both SIMs"
 
   override val nvItems: List<NvItem>
     get() =
         listOf(
-            NvItem(id = "UECAPA_REL16_UL_RRC_SEGMENTATION_SUPPORT", value = "01"),
-            NvItem(id = "UECAPA_REL16_UL_RRC_SEGMENTATION_SUPPORT", index = 1, value = "01"),
-            NvItem(id = "!NRRRC_R16_UL_RRC_SEGMENTATION", value = "01"),
-            NvItem(id = "!NRRRC_R16_UL_RRC_SEGMENTATION_DS", value = "01"),
+            NvItem(id = "!NRCAPA_INACTIVE_STATE", value = "01"),
+            NvItem(id = "!NRCAPA_INACTIVE_STATE_DS", value = "01"),
         )
 
   @IgnoredOnParcel

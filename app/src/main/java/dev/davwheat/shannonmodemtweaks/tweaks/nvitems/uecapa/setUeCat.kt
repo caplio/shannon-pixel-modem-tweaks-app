@@ -1,4 +1,4 @@
-package dev.davwheat.shannonmodemtweaks.tweaks.nvitems.nrcapa
+package dev.davwheat.shannonmodemtweaks.tweaks.nvitems.uecapa
 
 import android.os.Parcelable
 import dev.davwheat.shannonmodemtweaks.tweaks.nvitems.NvItem
@@ -8,21 +8,24 @@ import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-class Segmentation : NvItemTweak(), Parcelable {
+class setUeCat : NvItemTweak(), Parcelable {
   @IgnoredOnParcel
-  override val name = "Enable RRC UL Segmentation"
+  override val name = "Max UE Cat"
+
   @IgnoredOnParcel
-  override val description = "Applies to both SIMs"
+  override val description = "Sets maximum UE and DL, UL Cat for LTE ULCA"
 
   override val nvItems: List<NvItem>
     get() =
-        listOf(
-            NvItem(id = "UECAPA_REL16_UL_RRC_SEGMENTATION_SUPPORT", value = "01"),
-            NvItem(id = "UECAPA_REL16_UL_RRC_SEGMENTATION_SUPPORT", index = 1, value = "01"),
-            NvItem(id = "!NRRRC_R16_UL_RRC_SEGMENTATION", value = "01"),
-            NvItem(id = "!NRRRC_R16_UL_RRC_SEGMENTATION_DS", value = "01"),
-        )
-
+      listOf(
+        NvItem(id = "UECAPA_UE_CATEGORY", value = "0C"),
+        NvItem(id = "UECAPA_UE_CATEGORY", index = 1, value = "0C"),
+        NvItem(id = "UECAPA_REL12_CATEGORY_DL", value = "14"),
+        NvItem(id = "UECAPA_REL12_CATEGORY_DL", index = 1, value = "14"),
+        NvItem(id = "UECAPA_REL12_CATEGORY_UL", value = "12"),
+        NvItem(id = "UECAPA_REL12_CATEGORY_UL", index = 1, value = "12")
+      )
+      
   @IgnoredOnParcel
   private val compatibleDevices = setOf(
     PixelDevice.PIXEL_9,
@@ -30,6 +33,5 @@ class Segmentation : NvItemTweak(), Parcelable {
     PixelDevice.PIXEL_9_PRO_FOLD,
     PixelDevice.PIXEL_9_PRO_XL
   )
-
   override fun isTweakCompatible(device: PixelDevice): Boolean = device in compatibleDevices
 }
